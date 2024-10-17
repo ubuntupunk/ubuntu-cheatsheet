@@ -8,15 +8,15 @@ Thanks to [Zeepler](https://github.com/Jeeppler/qubes-cheatsheet) for the pandoc
 
 ## Downloads
 
-- **Markdown (Text): [ubuntu-cheatsheet.md](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/master/ubuntu-cheatsheet.md)**
+- **Markdown (Text): [ubuntu-cheatsheet.md](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/main/ubuntu-cheatsheet.md)**
 
-- **PDF: [ubuntu-cheatsheet.pdf](https://github.com/ubuntupunk/ubuntu-cheatsheet/raw/master/ubuntu-cheatsheet.pdf)**
+- **PDF: [ubuntu-cheatsheet.pdf](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/main/ubuntu-cheatsheet.pdf)**
 
-- **HTML: [ubuntu-cheatsheet.html](https://htmlpreview.github.io/?https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/master/ubuntu-cheatsheet.html)**
+- **HTML: [ubuntu-cheatsheet.html](https://htmlpreview.github.io/?https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/main/ubuntu-cheatsheet.html)**
 
-- **Text: [ubuntu-cheatsheet.txt](https://github.com/ubuntupunk/ubuntu-cheatsheet/raw/master/ubuntu-cheatsheet.txt)**
+- **Text: [ubuntu-cheatsheet.txt](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/main/generate.sh)**
 
-*The files are generated with the help of [`generate.sh`](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/master/generate.sh)*
+*The files are generated with the help of [`generate.sh`](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/main/generate.sh)*
 
 ## Other formats
 
