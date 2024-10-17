@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Ubuntu Cli Cheatsheet</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Ubuntu Cli Cheatsheet</h1>
+</header>
+<h1 id="davdevs-ubuntu-cli-cheat-sheet">DavDev’s Ubuntu CLI cheat
+sheet</h1>
+<h2 id="system">System</h2>
+<h3 id="system-information">System information</h3>
+<p><code>uname -a</code> : Displays all system information.
+<code>hostnamectl</code> : Shows current hostname and related details.
+<code>lscpu</code> : Lists CPU architecture information.
+<code>timedatectl status</code> : Shows system time.</p>
+<p><code>ls</code> : Lists files and directories.
+<code>touch &lt;filename&gt;</code> : Creates an empty file or updates
+the last accessed date.
+<code>cp &lt;source&gt; &lt;destination&gt;</code> : Copies files from
+source to destination.
+<code>mv &lt;source&gt; &lt;destination&gt;</code> : Moves files or
+renames them. <code>rm &lt;filename&gt;</code> : Deletes a file.</p>
+<h3 id="system-monitoring-and-management">System monitoring and
+management</h3>
+<p>top : Displays real-time system processes. htop : An interactive
+process viewer (needs installation). df -h : Shows disk usage in a
+human-readable format. free -m : Displays free and used memory in MB.
+kill <process id> : Terminates a process.</p>
+<h2 id="files">Files</h2>
+<h3 id="file-management">File management</h3>
+<h3 id="directory-navigation">Directory navigation</h3>
+<p><code>pwd</code> : Displays the current directory path.
+<code>cd &lt;directory&gt;</code> : Changes the current directory.
+<code>mkdir &lt;dirname&gt;</code> : Creates a new directory.</p>
+<h2 id="file-permissions-and-ownership">File permissions and
+ownership</h2>
+<h3 id="running-commands">Running commands</h3>
+<p><code>[command] &amp;</code> : Runs command in the background.
+<code>jobs</code> : Displays background commands.
+<code>fg &lt;command number&gt;</code> : Brings command to the
+foreground.</p>
+<p><code>chmod [who][+/-][permissions] &lt;file&gt;</code> : Changes
+file permissions. <code>chmod u+x &lt;file&gt;</code> : Makes a file
+executable by its owner. <code>chown [user]:[group] &lt;file&gt;</code>
+: Changes file owner and group.</p>
+<h2 id="searching-and-finding">Searching and finding</h2>
+<h3 id="service-management">Service management</h3>
+<p><code>sudo systemctl start &lt;service&gt;</code>: Starts a service.
+<code>sudo systemctl stop &lt;service&gt;</code> : Stops a service
+<code>sudo systemctl status &lt;service&gt;</code> : Checks the status
+of a service. <code>sudo systemctl reload &lt;service&gt;</code> :
+Reloads a service’s configuration without interrupting its operation.
+<code>journalctl -f</code> : Follows the journal, showing new log
+messages in real time. <code>journalctl -u &lt;unit_name&gt;</code> :
+Displays logs for a specific systemd unit.</p>
+<h1 id="cron-jobs-and-scheduling">Cron jobs and scheduling</h1>
+<p><code>crontab -e</code> : Edits cron jobs for the current user.
+<code>crontab -l</code> : Lists cron jobs for the current user.</p>
+<p><code>find [directory] -name &lt;search_pattern&gt;</code> : Finds
+files and directories.
+<code>grep &lt;search_pattern&gt; &lt;file&gt;</code> : Searches for a
+pattern in files.</p>
+<h2 id="archiving-and-compression">Archiving and compression</h2>
+<p>tar -czvf &lt;name.tar.gz&gt; <a href="#files">files</a> : Compresses
+files into a tar.gz archive. tar -xvf &lt;name.tar.[gz|bz|xz]&gt;
+[destination] : Extracts a compressed tar archive.</p>
+<h2 id="text-editing-and-processing">Text editing and processing</h2>
+<p><code>nano [file]</code> : Opens a file in the Nano text editor.
+<code>cat &lt;file&gt;</code> : Displays the contents of a file.
+<code>less &lt;file&gt;</code> : Displays the paginated content of a
+file. <code>head &lt;file&gt;</code> : Shows the first few lines of a
+file. <code>tail &lt;file&gt;</code> : Shows the last few lines of a
+file. <code>awk ‘{print}’ [file]</code> : Prints every line in a
+file.</p>
+<h1 id="packages">Packages</h1>
+<h2 id="package-management-apt">Package management (APT)</h2>
+<p><code>sudo apt install &lt;package&gt;</code> : Installs a package.
+<code>sudo apt install -f –reinstall &lt;package&gt;</code> : Reinstalls
+a broken package. <code>apt search &lt;package&gt;</code> : Searches for
+APT packages. <code>apt-cache policy &lt;package&gt;</code> : Lists
+available package versions. <code>sudo apt update</code> : Updates
+package lists. <code>sudo apt upgrade</code> : Upgrades all upgradable
+packages. <code>sudo apt remove &lt;package&gt;</code> : Removes a
+package. <code>sudo apt purge &lt;package&gt;</code> : Removes a package
+and all its configuration files.</p>
+<p><code>ip addr show</code> : Displays network interfaces and IP
+addresses. <code>ip -s link</code> : Shows network statistics.
+<code>ss -l</code> : Shows listening sockets.
+<code>ping &lt;host&gt;</code> : Pings a host and outputs results.</p>
+<h2 id="netplan-configuration-read-more-at-netplan.io">Netplan
+configuration (read more at netplan.io)</h2>
+<p><code>cat /etc/netplan/*.yaml</code> : Displays the current Netplan
+configuration. <code>sudo netplan try</code> : Tests a new configuration
+for a set period of time. <code>sudo netplan apply</code> : Applies the
+current Netplan configuration.</p>
+<h2 id="package-management-snap">Package management (Snap)</h2>
+<p><code>snap find &lt;package&gt;</code> : Search for Snap packages.
+<code>sudo snap install &lt;snap_name&gt;</code> : Installs a Snap
+package. <code>sudo snap remove &lt;snap_name&gt;</code> : Removes a
+Snap package. <code>sudo snap refresh</code> : Updates all installed
+Snap packages. <code>snap list</code> : Lists all installed Snap
+packages. <code>snap info &lt;snap_name&gt;</code> : Displays
+information about a Snap package.</p>
+<h2 id="firewall-management">Firewall management</h2>
+<p><code>sudo ufw status</code> : Displays the status of the firewall.
+<code>sudo ufw enable</code> : Enables the firewall.
+<code>sudo ufw disable</code> : Disables the firewall.
+<code>sudo ufw allow &lt;port/service&gt;</code> : Allows traffic on a
+specific port or service.
+<code>sudo ufw deny &lt;port/service&gt;</code> : Denies traffic on a
+specific port or service.
+<code>sudo ufw delete allow/deny &lt;port/service&gt;</code> : Deletes
+an existing rule.</p>
+<h1 id="ssh-and-remote-access">SSH and remote access</h1>
+<p><code>ssh &lt;user@host&gt;</code> : Connects to a remote host via
+SSH.
+<code>scp &lt;source&gt; &lt;user@host&gt;:&lt;destination&gt;</code> :
+Securely copies files between hosts.</p>
+<h1 id="users-groups">Users &amp; groups</h1>
+<h2 id="user-management">User management</h2>
+<p><code>w</code> : Shows which users are logged in.
+<code>sudo adduser &lt;username&gt;</code> : Creates a new user.
+<code>sudo deluser &lt;username&gt;</code> : Deletes a user.
+<code>sudo passwd &lt;username&gt;</code> : Sets or changes the password
+for a user. <code>su &lt;username&gt;</code> : Switches user.
+<code>sudo passwd -l &lt;username&gt;</code> : Locks a user account.
+<code>sudo passwd -u &lt;username&gt;</code> : Unlocks a user password.
+<code>Sudo change &lt;username&gt;</code> : Sets user password
+expiration date.</p>
+<h2 id="firewall-management-1">Firewall management</h2>
+<p><code>sudo ufw status</code> : Displays the status of the firewall.
+<code>sudo ufw enable</code> : Enables the firewall.
+<code>sudo ufw disable</code> : Disables the firewall.
+<code>sudo ufw allow &lt;port/service&gt;</code> : Allows traffic on a
+specific port or service.
+<code>sudo ufw deny &lt;port/service&gt;</code> : Denies traffic on a
+specific port or service.
+<code>sudo ufw delete allow/deny &lt;port/service&gt;</code> : Deletes
+an existing rule.</p>
+<h2 id="group-management">Group management</h2>
+<p><code>id [username]</code> : Displays user and group IDs.
+<code>groups [username]</code> : Shows the groups a user belongs to.
+<code>sudo addgroup &lt;groupname&gt;</code> : Creates a new group.
+<code>sudo delgroup &lt;groupname&gt;</code> : Deletes a group.</p>
+<h1 id="ubuntu-lxd">Ubuntu LXD</h1>
+<p>LXD is a modern, secure and powerful tool that provides a unified
+experience for running and managing containers or virtual machines.
+Visit https ://canonical.com/lxd for more information.</p>
+<p><code>lxd init</code> : initializes LXD before first use</p>
+<h2 id="creating-instances">Creating instances</h2>
+<p><code>lxc init ubuntu:22.04 &lt;container name&gt;</code> : Creates a
+lxc system container (without starting it).
+<code>lxc launch ubuntu:24.04 &lt;container name&gt;</code> : Creates
+and starts a lxc system container.
+<code>lxc launch ubuntu:22.04 &lt;vm name&gt; --vm</code> : Creates and
+starts a virtual machine.</p>
+<h2 id="managing-instances">Managing instances</h2>
+<p><code>lxc list</code> : Lists instances.
+<code>lxc info &lt;instance&gt;</code> : Shows status information about
+an instance. <code>lxc start &lt;instance&gt;</code> : Starts an
+instance. <code>lxc stop &lt;instance&gt; [--force]</code> : Stops an
+instance.
+<code>lxc delete &lt;instance&gt; [--force|--interactive]</code> :
+Deletes an instance.</p>
+<h2 id="accessing-instances">Accessing instances</h2>
+<p><code>lxc exec &lt;instance&gt; -- &lt;command&gt;</code> : Runs a
+command inside an instance.
+<code>lxc exec &lt;instance&gt; -- bash</code> : Gets shell access to an
+instance (if bash is installed).
+<code>lxc console &lt;instance&gt; [flags]</code> : Gets console access
+to an instance.
+<code>lxc file pull &lt;instance&gt;/&lt;instance_filepath&gt; &lt;local_filepath&gt;</code>
+: Pulls a file from an instance.
+<code>lxc file pull &lt;local_filepath&gt; &lt;instance&gt;/&lt;instance_filepath&gt;</code>
+: Pushes a file to an instance.</p>
+<h2 id="using-projects">Using projects</h2>
+<p><code>lxc project create &lt;project&gt; [--config &lt;option&gt;]</code>
+: Creates a project.
+<code>lxc project set &lt;project&gt; &lt;option&gt;</code> : Configures
+a project. <code>lxc project switch &lt;project&gt;</code> : Switches to
+a project.</p>
+<h1 id="pipewire">Pipewire</h1>
+<p><code>systemctl --user restart pipewire.service</code> : Restarts the
+Pipewire service.</p>
+<p></p>
+</body>
+</html>
