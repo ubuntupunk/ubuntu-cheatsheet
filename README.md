@@ -14,7 +14,7 @@ Thanks to [Zeepler](https://github.com/Jeeppler/qubes-cheatsheet) for the pandoc
 
 - **HTML: [ubuntu-cheatsheet.html](https://htmlpreview.github.io/?https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/main/ubuntu-cheatsheet.html)**
 
-- **Text: [ubuntu-cheatsheet.txt](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/main/generate.sh)**
+- **Text: [ubuntu-cheatsheet.txt](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/main/ubuntu-cheatsheet.txt)**
 
 *The files are generated with the help of [`generate.sh`](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/main/generate.sh)*
 
