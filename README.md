@@ -30,10 +30,10 @@ Pandoc can generate different files from one [markdown](http://daringfireball.ne
 pandoc metadata.yaml ubuntu-cheatsheet.md -s -o ubuntu-cheatsheet.pdf
 
 # outputs the ubuntu cheat sheet as HTML (HTML5) file
-pandoc metadata.yaml ubuntu-cheatsheet.md -s -S -t html5 -o ubuntu-cheatsheet.html
+pandoc metadata.yaml ubuntu-cheatsheet.md -s -t html5 -o ubuntu-cheatsheet.html
 
 # outputs the ubuntu cheat sheet as plain text
-pandoc ubuntu-cheatsheet.md -s -S -t plain -o ubuntu-cheatsheet.txt
+pandoc ubuntu-cheatsheet.md -s -t plain -o ubuntu-cheatsheet.txt
 ```
 
 `ubuntu-cheatsheet.md` is the input file and `ubuntu-cheatsheet.xxx` the output file.
