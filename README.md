@@ -4,7 +4,7 @@ This cheat sheet contains commands and examples for [ubuntu 22.04](https://www.u
 
 It is based upon the [Ubuntu Server Cheatsheet](https://assets.ubuntu.com/v1/3bd0daaf-Ubuntu%20Server%20CLI%20cheat%20sheet%202024%20v6.pdf?)
 
-Thanks to [Zeepler](https://github.com/Jeeppler/qubes-cheatsheet) for the pandocinspiration.
+Thanks to [Zeepler](https://github.com/Jeeppler/qubes-cheatsheet) for the pandoc inspiration.
 
 ## Downloads
 
