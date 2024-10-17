@@ -1,22 +1,22 @@
-# ubuntu OS Cheat Sheet
+# linux OS Cheat Sheet
 
-This cheat sheet contains commands and examples for [ubuntu 22.04](https://www.ubuntu.com/).
+This cheat sheet contains commands and examples for [linux 22.04](https://www.linux.com/).
 
-It is based upon the [Ubuntu Server Cheatsheet](https://assets.ubuntu.com/v1/3bd0daaf-Ubuntu%20Server%20CLI%20cheat%20sheet%202024%20v6.pdf?)
+It is based upon the [linux Server Cheatsheet](https://assets.linux.com/v1/3bd0daaf-linux%20Server%20CLI%20cheat%20sheet%202024%20v6.pdf?)
 
 Thanks to [Zeepler](https://github.com/Jeeppler/qubes-cheatsheet) for the pandocinspiration.
 
 ## Downloads
 
-- **Markdown (Text): [ubuntu-cheatsheet.md](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/master/ubuntu-cheatsheet.md)**
+- **Markdown (Text): [linux-cheatsheet.md](https://github.com/ubuntupunk/linux-cheatsheet/blob/master/linux-cheatsheet.md)**
 
-- **PDF: [ubuntu-cheatsheet.pdf](https://github.com/ubuntupunk/ubuntu-cheatsheet/raw/master/ubuntu-cheatsheet.pdf)**
+- **PDF: [linux-cheatsheet.pdf](https://github.com/ubuntupunk/ubuntupunk-cheatsheet/cheats/raw/master/linux-cheatsheet.pdf)**
 
-- **HTML: [ubuntu-cheatsheet.html](https://htmlpreview.github.io/?https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/master/ubuntu-cheatsheet.html)**
+- **HTML: [linux-cheatsheet.html](https://htmlpreview.github.io/?https://github.com/ubuntupunk/cheats/linux-cheatsheet/blob/master/linux-cheatsheet.html)**
 
-- **Text: [ubuntu-cheatsheet.txt](https://github.com/ubuntupunk/ubuntu-cheatsheet/raw/master/ubuntu-cheatsheet.txt)**
+- **Text: [linux-cheatsheet.txt](https://github.com/ubuntupunk/ubuntu-cheatsheet/raw/master/cheats/linux-cheatsheet.txt)**
 
-*The files are generated with the help of [`generate.sh`](https://github.com/ubuntupunk/ubuntu-cheatsheet/blob/master/generate.sh)*
+*The files are generated with the help of [`generate.sh`](https://github.com/ubuntupunk/ubuntu-cheatsheet/cheats/blob/master/generate.sh)*
 
 ## Other formats
 
@@ -26,17 +26,17 @@ Pandoc can generate different files from one [markdown](http://daringfireball.ne
 
 
 ```bash
-# outputs the ubuntu cheat sheet as PDF file
-pandoc metadata.yaml ubuntu-cheatsheet.md -s -o ubuntu-cheatsheet.pdf
+# outputs the linux cheat sheet as PDF file
+pandoc metadata.yaml linux-cheatsheet.md -s -o linux-cheatsheet.pdf
 
-# outputs the ubuntu cheat sheet as HTML (HTML5) file
-pandoc metadata.yaml ubuntu-cheatsheet.md -s -S -t html5 -o ubuntu-cheatsheet.html
+# outputs the linux cheat sheet as HTML (HTML5) file
+pandoc metadata.yaml linux-cheatsheet.md -s -S -t html5 -o linux-cheatsheet.html
 
-# outputs the ubuntu cheat sheet as plain text
-pandoc ubuntu-cheatsheet.md -s -S -t plain -o ubuntu-cheatsheet.txt
+# outputs the linux cheat sheet as plain text
+pandoc linux-cheatsheet.md -s -S -t plain -o linux-cheatsheet.txt
 ```
 
-`ubuntu-cheatsheet.md` is the input file and `ubuntu-cheatsheet.xxx` the output file.
+`linux-cheatsheet.md` is the input file and `linux-cheatsheet.xxx` the output file.
 
 `metadata.yaml` contains some additional metadata information for the PDF and HTML generation.
 

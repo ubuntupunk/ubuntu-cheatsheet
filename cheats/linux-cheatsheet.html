@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Linux Cli Cheatsheet</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Linux Cli Cheatsheet</h1>
+</header>
+<h1 id="linux-command-line-cheat-sheet">Linux Command Line Cheat
+Sheet</h1>
+<h2 id="bash-commands">Bash Commands</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>uname -a</code></td>
+<td>Show system and kernel</td>
+</tr>
+<tr class="even">
+<td><code>head -n1 /etc/issue</code></td>
+<td>Show distribution</td>
+</tr>
+<tr class="odd">
+<td><code>mount</code></td>
+<td>Show mounted filesystems</td>
+</tr>
+<tr class="even">
+<td><code>date</code></td>
+<td>Show system date</td>
+</tr>
+<tr class="odd">
+<td><code>uptime</code></td>
+<td>Show uptime</td>
+</tr>
+<tr class="even">
+<td><code>whoami</code></td>
+<td>Show your username</td>
+</tr>
+<tr class="odd">
+<td><code>man *command*</code></td>
+<td>Show manual for <em>command</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="bash-shortcuts">Bash Shortcuts</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>CTRL-c</code></td>
+<td>Stop current command</td>
+</tr>
+<tr class="even">
+<td><code>CTRL-z</code></td>
+<td>Sleep program</td>
+</tr>
+<tr class="odd">
+<td><code>CTRL-a</code></td>
+<td>Go to start of line</td>
+</tr>
+<tr class="even">
+<td><code>CTRL-e</code></td>
+<td>Go to end of line</td>
+</tr>
+<tr class="odd">
+<td><code>CTRL-u</code></td>
+<td>Cut from start of line</td>
+</tr>
+<tr class="even">
+<td><code>CTRL-k</code></td>
+<td>Cut to end of line</td>
+</tr>
+<tr class="odd">
+<td><code>CTRL-r</code></td>
+<td>Search history</td>
+</tr>
+<tr class="even">
+<td><code>!!</code></td>
+<td>Repeat last command</td>
+</tr>
+<tr class="odd">
+<td><code>!*abc*</code></td>
+<td>Run last command starting with <em>abc</em></td>
+</tr>
+<tr class="even">
+<td><code>!*abc*:p</code></td>
+<td>Print last command starting with <em>abc</em></td>
+</tr>
+<tr class="odd">
+<td><code>!$</code></td>
+<td>Last argument of previous command</td>
+</tr>
+<tr class="even">
+<td><code>ALT-.</code></td>
+<td>Last argument of previous command</td>
+</tr>
+<tr class="odd">
+<td><code>!*</code></td>
+<td>All arguments of previous command</td>
+</tr>
+<tr class="even">
+<td><code>^abc^123</code></td>
+<td>Run previous command, replacing <em>abc</em> with <em>123</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="bash-variables">Bash Variables</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>env</code></td>
+<td>Show environment variables</td>
+</tr>
+<tr class="even">
+<td><code>echo $NAME</code></td>
+<td>Output value of <code>$NAME</code> variable</td>
+</tr>
+<tr class="odd">
+<td><code>export NAME=value</code></td>
+<td>Set <code>$NAME</code> to <em>value</em></td>
+</tr>
+<tr class="even">
+<td><code>$PATH</code></td>
+<td>Executable search path</td>
+</tr>
+<tr class="odd">
+<td><code>$HOME</code></td>
+<td>Home directory</td>
+</tr>
+<tr class="even">
+<td><code>$SHELL</code></td>
+<td>Current shell</td>
+</tr>
+</tbody>
+</table>
+<h2 id="io-redirection">IO Redirection</h2>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>cmd &lt; file</code></td>
+<td>Input of <code>cmd</code> from <code>file</code></td>
+</tr>
+<tr class="even">
+<td><code>cmd1 &lt;(cmd2)</code></td>
+<td>Output of <code>cmd2</code> as file input to <code>cmd1</code></td>
+</tr>
+<tr class="odd">
+<td><code>cmd &gt; file</code></td>
+<td>Standard output (stdout) of <code>cmd</code> to
+<code>file</code></td>
+</tr>
+<tr class="even">
+<td><code>cmd &gt; /dev/null</code></td>
+<td>Discard stdout of <code>cmd</code></td>
+</tr>
+<tr class="odd">
+<td><code>cmd &gt;&gt; file</code></td>
+<td>Append stdout to <code>file</code></td>
+</tr>
+<tr class="even">
+<td><code>cmd 2&gt; file</code></td>
+<td>Error output (stderr) of <code>cmd</code> to <code>file</code></td>
+</tr>
+<tr class="odd">
+<td><code>cmd 1&gt;&amp;2</code></td>
+<td>stdout to same place as stderr</td>
+</tr>
+<tr class="even">
+<td><code>cmd 2&gt;&amp;1</code></td>
+<td>stderr to same place as stdout</td>
+</tr>
+<tr class="odd">
+<td><code>cmd &amp;&gt; file</code></td>
+<td>Every output of <code>cmd</code> to <code>file</code></td>
+</tr>
+<tr class="even">
+<td><em>cmd</em> refers to a command.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pipes">Pipes</h2>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>cmd1 \| cmd2</code></td>
+<td>stdout of <code>cmd1</code> to <code>cmd2</code></td>
+</tr>
+<tr class="even">
+<td><code>cmd1 \|&amp; cmd2</code></td>
+<td>stderr of <code>cmd1</code> to <code>cmd2</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="command-lists">Command Lists</h2>
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>cmd1 ; cmd2</code></td>
+<td>Run <code>cmd1</code> then <code>cmd2</code></td>
+</tr>
+<tr class="even">
+<td><code>cmd1 \&amp;\&amp; cmd2</code></td>
+<td>Run <code>cmd2</code> if <code>cmd1</code> is successful</td>
+</tr>
+<tr class="odd">
+<td><code>cmd1 \|\| cmd2</code></td>
+<td>Run <code>cmd2</code> if <code>cmd1</code> is not successful</td>
+</tr>
+<tr class="even">
+<td><code>cmd &amp;</code></td>
+<td>Run <code>cmd</code> in a subshell</td>
+</tr>
+</tbody>
+</table>
+<h2 id="directory-operations">Directory Operations</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pwd</code></td>
+<td>Show current directory</td>
+</tr>
+<tr class="even">
+<td><code>mkdir dir</code></td>
+<td>Make directory <code>dir</code></td>
+</tr>
+<tr class="odd">
+<td><code>cd dir</code></td>
+<td>Change directory to <code>dir</code></td>
+</tr>
+<tr class="even">
+<td><code>cd ..</code></td>
+<td>Go up a directory</td>
+</tr>
+<tr class="odd">
+<td><code>ls</code></td>
+<td>List files</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ls-options">ls Options</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>-a</code></td>
+<td>Show all (including hidden)</td>
+</tr>
+<tr class="even">
+<td><code>-R</code></td>
+<td>Recursive list</td>
+</tr>
+<tr class="odd">
+<td><code>-r</code></td>
+<td>Reverse order</td>
+</tr>
+<tr class="even">
+<td><code>-t</code></td>
+<td>Sort by last modified</td>
+</tr>
+<tr class="odd">
+<td><code>-S</code></td>
+<td>Sort by file size</td>
+</tr>
+<tr class="even">
+<td><code>-l</code></td>
+<td>Long listing format</td>
+</tr>
+<tr class="odd">
+<td><code>-1</code></td>
+<td>One file per line</td>
+</tr>
+<tr class="even">
+<td><code>-m</code></td>
+<td>Comma-separated output</td>
+</tr>
+<tr class="odd">
+<td><code>-Q</code></td>
+<td>Quoted output</td>
+</tr>
+</tbody>
+</table>
+<h2 id="search-files">Search Files</h2>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>grep pattern files</code></td>
+<td>Search for <em>pattern</em> in <em>files</em></td>
+</tr>
+<tr class="even">
+<td><code>grep -i</code></td>
+<td>Case insensitive search</td>
+</tr>
+<tr class="odd">
+<td><code>grep -r</code></td>
+<td>Recursive search</td>
+</tr>
+<tr class="even">
+<td><code>grep -v</code></td>
+<td>Inverted search</td>
+</tr>
+<tr class="odd">
+<td><code>grep -o</code></td>
+<td>Show matched part of file only</td>
+</tr>
+<tr class="even">
+<td><code>find /dir/ -name name*</code></td>
+<td>Find files starting with <em>name</em> in <em>dir</em></td>
+</tr>
+<tr class="odd">
+<td><code>find /dir/ -user name</code></td>
+<td>Find files owned by <em>name</em> in <em>dir</em></td>
+</tr>
+<tr class="even">
+<td><code>find /dir/ -mmin num</code></td>
+<td>Find files modifed less than <em>num</em> minutes ago in
+<em>dir</em></td>
+</tr>
+<tr class="odd">
+<td><code>whereis command</code></td>
+<td>Find binary / source / manual for <em>command</em></td>
+</tr>
+<tr class="even">
+<td><code>locate file</code></td>
+<td>Find <em>file</em> (quick search of system index)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-operations">File Operations</h2>
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>touch file1</code></td>
+<td>Create <code>file1</code></td>
+</tr>
+<tr class="even">
+<td><code>cat file1 file2</code></td>
+<td>Concatenate files and output</td>
+</tr>
+<tr class="odd">
+<td><code>less file1</code></td>
+<td>View and paginate <code>file1</code></td>
+</tr>
+<tr class="even">
+<td><code>file file1</code></td>
+<td>Get type of <code>file1</code></td>
+</tr>
+<tr class="odd">
+<td><code>cp file1 file2</code></td>
+<td>Copy <code>file1</code> to <code>file2</code></td>
+</tr>
+<tr class="even">
+<td><code>mv file1 file2</code></td>
+<td>Move <code>file1</code> to <code>file2</code></td>
+</tr>
+<tr class="odd">
+<td><code>rm file1</code></td>
+<td>Delete <code>file1</code></td>
+</tr>
+<tr class="even">
+<td><code>head file1</code></td>
+<td>Show first 10 lines of <code>file1</code></td>
+</tr>
+<tr class="odd">
+<td><code>tail file1</code></td>
+<td>Show last 10 lines of <code>file1</code></td>
+</tr>
+<tr class="even">
+<td><code>tail -F file1</code></td>
+<td>Output last lines of <code>file1</code> as it changes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="watch-a-command">Watch a Command</h2>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>watch -n 5 'ntpq -p'</code></td>
+<td>Issue the ‘ntpq -p’ command every 5 seconds and display output</td>
+</tr>
+</tbody>
+</table>
+<h2 id="process-management">Process Management</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ps</code></td>
+<td>Show snapshot of processes</td>
+</tr>
+<tr class="even">
+<td><code>top</code></td>
+<td>Show real time processes</td>
+</tr>
+<tr class="odd">
+<td><code>kill pid</code></td>
+<td>Kill process with id <em>pid</em></td>
+</tr>
+<tr class="even">
+<td><code>pkill name</code></td>
+<td>Kill process with name <em>name</em></td>
+</tr>
+<tr class="odd">
+<td><code>killall name</code></td>
+<td>Kill all processes with names beginning <em>name</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="nano-shortcuts">Nano Shortcuts</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 34%" />
+<col style="width: 15%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Ctrl-R</code></td>
+<td>Read file</td>
+<td><code>ALT-A</code></td>
+<td>Start marking text</td>
+</tr>
+<tr class="even">
+<td><code>Ctrl-O</code></td>
+<td>Save file</td>
+<td><code>CTRL-K</code></td>
+<td>Cut marked text or line</td>
+</tr>
+<tr class="odd">
+<td><code>Ctrl-X</code></td>
+<td>Close file</td>
+<td><code>CTRL-U</code></td>
+<td>Paste text</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>Navigate File</strong></td>
+<td></td>
+<td><strong>Search File</strong></td>
+</tr>
+<tr class="even">
+<td><code>ALT-/</code></td>
+<td>End of file</td>
+<td><code>CTRL-W</code></td>
+<td>Find</td>
+</tr>
+<tr class="odd">
+<td><code>CTRL-A</code></td>
+<td>Beginning of line</td>
+<td><code>ALT-W</code></td>
+<td>Find next</td>
+</tr>
+<tr class="even">
+<td><code>CTRL-E</code></td>
+<td>End of line</td>
+<td><code>CTRL-\</code></td>
+<td>Search and replace</td>
+</tr>
+<tr class="odd">
+<td><code>CTRL-C</code></td>
+<td>Show line number</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>CTRL-_</code></td>
+<td>Go to line number</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>Cut and Paste</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>More nano info at: http://www.nano-editor.org/docs.php</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="screen-shortcuts">Screen Shortcuts</h2>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 37%" />
+<col style="width: 12%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>screen</code></td>
+<td>Start a screen session.</td>
+<td><code>CTRL-A n</code></td>
+<td>Go to the next instance of terminal.</td>
+</tr>
+<tr class="even">
+<td><code>screen -r</code></td>
+<td>Resume a screen session.</td>
+<td><code>CTRL-A p</code></td>
+<td>Go to the previous instance of terminal.</td>
+</tr>
+<tr class="odd">
+<td><code>screen -list</code></td>
+<td>Show your current screen sessions.</td>
+<td><code>CTRL-A "</code></td>
+<td>Show current instances of terminals.</td>
+</tr>
+<tr class="even">
+<td><code>CTRL-A</code></td>
+<td>Activate commands for screen.</td>
+<td><code>CTRL-A A</code></td>
+<td>Rename the current instance.</td>
+</tr>
+<tr class="odd">
+<td><code>CTRL-A c</code></td>
+<td>Create a new instance of terminal.</td>
+<td>More screen info at: http://www.gnu.org/software/screen/</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-permissions">File Permissions</h2>
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>chmod 775 file</code></td>
+<td>Change mode of <em>file</em> to 775</td>
+</tr>
+<tr class="even">
+<td><code>chmod -R 600 folder</code></td>
+<td>Recursively chmod <em>folder</em> to 600</td>
+</tr>
+<tr class="odd">
+<td><code>chown user:group file</code></td>
+<td>Change <em>file</em> owner to <em>user</em> and group to
+<em>group</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-permission-numbers">File Permission Numbers</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Number</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4</td>
+<td>read (r)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>write (w)</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>execute (x)</td>
+</tr>
+</tbody>
+</table>
+<p>First digit is owner permission, second is group and third is
+everyone. Calculate permission digits by adding numbers above.</p>
+</body>
+</html>
