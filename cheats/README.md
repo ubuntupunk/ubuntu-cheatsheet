@@ -1,6 +1,6 @@
 # linux OS Cheat Sheet
 
-This cheat sheet contains commands and examples for [linux 22.04](https://www.linux.com/).
+This cheat sheet contains commands and examples for [linux](https://www.linux.com/).
 
 It is based upon the [linux Server Cheatsheet](https://assets.linux.com/v1/3bd0daaf-linux%20Server%20CLI%20cheat%20sheet%202024%20v6.pdf?)
 
