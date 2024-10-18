@@ -1,4 +1,4 @@
-# ubuntu OS Cheat Sheet
+# Ubuntu OS Cheat Sheet
 
 This cheat sheet contains commands and examples for [ubuntu 22.04](https://www.ubuntu.com/).
 
